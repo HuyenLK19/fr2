@@ -1,10 +1,49 @@
-import { Link, useRoutes } from "react-router-dom";
+import { Link, Navigate, useRoutes } from "react-router-dom";
+import Add from "./pages/Add";
+import List from "./pages/List";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
+import Update from "./pages/Update";
+import PrivateRouter from "./PrivateRouter";
 
 function App() {
-  const routes = useRoutes([]);
+  const routes = useRoutes([
+    {
+      path: "/",
+      element: <Navigate to='/product/list' replace={true} />,
+    },
+    {
+      path: '/product',
+      element: <PrivateRouter children></PrivateRouter>,
+      children: [
+        {
+          path: "list",
+          element: <List />
+        },
+        {
+          path: "add",
+          element: <Add />
+        },
+        {
+          path: "update/:id",
+          element: <Update />
+        },
+      ]
+    },
+
+    {
+      path: '/signup',
+      element: <Signup />
+    },
+    {
+      path: '/signin',
+      element: <Signin />
+    }
+  ]);
+
   return (
     <>
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+      <nav className="navbar navbar-dark bg-dark navbar-expand-lg" style={{ marginBottom: '50px' }}>
         <div className="container">
           <Link className="navbar-brand" to="/">
             Thi WEB209
@@ -15,12 +54,12 @@ function App() {
               style={{ gap: 3, fontSize: 20 }}
             >
               <li className="nav-item">
-                <Link className="nav-link active" to="/register">
+                <Link className="nav-link active" to="/signup">
                   Register
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/login">
+                <Link className="nav-link active" to="/signin">
                   Login
                 </Link>
               </li>
@@ -36,9 +75,15 @@ function App() {
               </li>
             </ul>
           </div>
-          <button className="btn btn-danger">Logout</button>
+          <button className="btn btn-danger" onClick={() => {
+            if (confirm("LOGOUT??")) {
+              localStorage.clear()
+              window.location.reload()
+            }
+          }}>Logout</button>
         </div>
       </nav>
+
       <div className="container">{routes}</div>
     </>
   );

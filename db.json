@@ -1,4 +1,44 @@
 {
-  "products": [],
-  "users": []
+  "products": [
+    {
+      "name": "áo len 1",
+      "price": 32,
+      "countInStock": 3,
+      "description": "mo ta",
+      "id": "4c7f"
+    },
+    {
+      "name": "dfadad",
+      "price": 10,
+      "description": "fsgsfd",
+      "id": "hIBO9V5"
+    }
+  ],
+  "users": [
+    {
+      "email": "lkhuyen.mmiv@gmail.com",
+      "password": "$2a$10$so13i.hsoSCrKusvVAW6K.mvJ7dqJA2p8olWTgnPg4uUB7hed4wWW",
+      "id": 1
+    },
+    {
+      "email": "lkhuyen@gmail.com",
+      "password": "$2a$10$.hhj9laueYRwJT8q.GpWI..gaz0zaOwpiDEtnetFyJEmUdBJKPa8i",
+      "id": 2
+    },
+    {
+      "email": "lkhuyen1@gmail.com",
+      "password": "$2a$10$fh6coY10VGuu6qz25rNajueEKMTVBMgV8h2j6z..f.v2TcMvzkbYC",
+      "id": 3
+    },
+    {
+      "email": "huyenlk@gmail.com",
+      "password": "$2a$10$9pQO8.0A4nXQwdE3lYRzXOmyKLFEOF4sjJl6m0HFOJX8wVKpmok5q",
+      "id": 4
+    },
+    {
+      "email": "lkhuyen12@gmail.com",
+      "password": "$2a$10$E.dUIPbFgAjMa56egiZVIehE7NmRTF./ml.uR20kmwsSUk07KCVTa",
+      "id": 5
+    }
+  ]
 }
